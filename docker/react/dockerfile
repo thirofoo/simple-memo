@@ -1,0 +1,7 @@
+FROM node:16.14.2-buster-slim
+
+RUN mkdir /front
+WORKDIR /front
+COPY ./frontend .
+RUN npm install
+RUN apt-get install -y xdg-utils

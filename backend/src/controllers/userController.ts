@@ -11,7 +11,7 @@ router.get("/", async (req: Request, res:Response) => {
   res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'PUT, DELETE, OPTIONS');
   const allUsers = await prisma.user.findMany();
-  res.json({ allUsers });
+  res.json(allUsers);
 });
 
 export default router

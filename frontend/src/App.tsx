@@ -16,8 +16,8 @@ function App() {
       mode: 'cors'
     });
     const data:Datas[] = await res.json();
-    console.log(data.allUsers);
-    setMemos(data.allUsers);
+    console.log(data);
+    setMemos(data);
   }
   
   return (
