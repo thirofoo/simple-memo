@@ -1,0 +1,6 @@
+FROM node:16.14.2-buster-slim
+
+WORKDIR /front
+COPY ./frontend/package.json ./frontend/package-lock.json ./
+RUN npm install
+RUN chmod -R 777 ./node_modules

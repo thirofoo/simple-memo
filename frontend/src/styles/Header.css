@@ -1,0 +1,15 @@
+header{
+    @apply bg-slate-800 flex text-5xl text-white justify-between;
+}
+
+.title{
+    @apply m-4
+}
+
+.menu{
+    @apply text-right mr-4 mt-2;
+}
+
+.link{
+    @apply no-underline text-white m-4;
+}

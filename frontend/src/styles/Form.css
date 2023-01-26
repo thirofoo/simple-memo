@@ -1,0 +1,43 @@
+.memo_form{
+    @apply bg-slate-500 text-white text-center p-5;
+}
+
+.head{
+    @apply text-5xl
+}
+
+.wrapper{
+    @apply p-3 my-3 items-center max-w-[50rem] w-full mx-auto;
+}
+
+.memo_wrapper {
+    @apply flex flex-col gap-3;
+}
+
+.memo{
+    @apply bg-gray-600 p-3 w-full;
+}
+
+.memo_head{
+    @apply flex justify-between text-4xl
+}
+
+.content{
+    @apply text-xl pb-3;
+}
+
+label{
+    @apply block pt-5;
+}
+
+.form{
+    @apply items-center w-3/4 bg-slate-600 rounded-2xl p-5 text-white max-w-xl;
+}
+
+.button{
+    @apply bg-slate-800 text-white p-3 w-1/3 max-w-md rounded-xl text-xl hover:bg-slate-600 duration-150;
+}
+
+.ng{
+    @apply bg-slate-300 hover:bg-slate-300;
+}

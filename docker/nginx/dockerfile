@@ -1,0 +1,4 @@
+FROM nginx:1.15
+
+COPY ./docker/nginx/confs /etc/nginx/conf.d
+

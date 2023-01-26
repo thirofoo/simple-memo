@@ -1,0 +1,49 @@
+version: "3"
+services:
+  db:
+    container_name: postgre
+    image: postgres:14.5
+    env_file: ./.env
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql
+
+  api:
+    container_name: express-api
+    build:
+      context: .
+      dockerfile: ./docker/express/dockerfile
+    env_file: ./.env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/back
+      - /back/node_modules
+    depends_on:
+      - db
+    working_dir: /back
+    stdin_open: true
+    tty: true
+    command: npm run dev 
+
+  react:
+    container_name: react-front
+    build: 
+      context: .
+      dockerfile: docker/react/dockerfile
+    env_file: ./.env
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/front
+      - /front/node_modules
+    depends_on:
+      - api
+    working_dir: /front
+    stdin_open: true
+    tty: true
+    command: npm run dev
+
+volumes:
+  postgres:
